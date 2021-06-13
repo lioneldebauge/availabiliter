@@ -5,7 +5,7 @@ Availabiliter is a Ruby availability calculator for date ranges. It handles the 
 - endless date ranges
 - overlapping date ranges
 - consecutive date ranges
-- one day ranges
+- one day date ranges
 
 It also allows to calculate availabilities from a dedicated date in time.
 
