@@ -29,19 +29,19 @@ Or install it yourself as:
 
 ```ruby
 # Build an array with all the date ranges you are looking an availability for
-range_array = [Date.new(1999, 1, 2)..Date.new(1999, 5, 1), Date.new(2000, 1, 1)..Date.new(2000, 2, 1), Date.new(2000, 3, 1)..nil]
+holidays = [Date.new(1999, 1, 2)..Date.new(1999, 5, 1), Date.new(2000, 1, 1)..Date.new(2000, 2, 1), Date.new(2000, 3, 1)..nil]
 
-Availabiliter.get_availabilities(range_array)
+Availabiliter.get_availabilities(holidays)
 # => [Date.new(1999, 5, 2)..Date.new(1999, 12, 31), Date.new(2000, 2, 2)..Date.new(2000, 2, 29)]
 
 # If you want to retrieve availabilities starting from a specific date simply add it as a second argument
-Availabiliter.get_availabilities(range_array, Date.new(1999, 12, 15))
+Availabiliter.get_availabilities(holidays, Date.new(1999, 12, 15))
 # => [Date.new(1999, 12, 15)..Date.new(1999, 12, 31), Date.new(2000, 2, 2)..Date.new(2000, 2, 29)]
 
 # If all of your date ranges have an end the last availability will be endless
-range_array = [Date.new(1999, 1, 2)..Date.new(1999, 5, 1)]
+holidays = [Date.new(1999, 1, 2)..Date.new(1999, 5, 1)]
 
-Availabiliter.get_availabilities(range_array)
+Availabiliter.get_availabilities(holidays)
 # => [Date.new(1999, 5, 2)..]
 
 ```
