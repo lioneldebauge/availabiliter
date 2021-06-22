@@ -2,17 +2,17 @@
 
 require "availabiliter/date_range"
 
-RSpec.describe DateRange do
+RSpec.describe Availabiliter::DateRange do
   let(:date_range) { described_class.new(Date.new(2020, 1, 1), Date.new(2020, 1, 3)) }
 
   describe "#new" do
-    subject(:new) { DateRange.new(start_date, end_date) }
+    subject(:new) { described_class.new(start_date, end_date) }
 
     context "when range start_date and end_date are dates in chronological order" do
       let(:start_date) { Date.new(2000, 1, 1) }
       let(:end_date) { Date.new(2000, 1, 31) }
 
-      it { is_expected.to be_instance_of(DateRange) }
+      it { is_expected.to be_instance_of(described_class) }
       it { is_expected.to have_attributes(start_date: start_date, end_date: end_date) }
     end
 
@@ -20,7 +20,7 @@ RSpec.describe DateRange do
       let(:start_date) { Date.new(2000, 1, 1) }
       let(:end_date) { nil }
 
-      it { is_expected.to be_instance_of(DateRange) }
+      it { is_expected.to be_instance_of(described_class) }
       it { is_expected.to have_attributes(start_date: start_date, end_date: end_date) }
     end
 
