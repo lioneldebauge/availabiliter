@@ -27,7 +27,7 @@ RSpec.describe TimeFrame do
 
     context "when the start_date is given" do
       subject(:new) { described_class.new(range_array, start_date) }
-      let(:start_date) { earliest_range.end.tomorrow }
+      let(:start_date) { earliest_range.end.next_day }
 
       it "removes all ranges ending before the start date" do
         expect(subject.date_ranges).to start_with(latest_range)
@@ -84,7 +84,7 @@ RSpec.describe TimeFrame do
         let(:start_date) { nil }
 
         it "returns the corresponding availabilities starting from the first date_range" do
-          expect(get_availabilities).to eq [range_end.tomorrow..]
+          expect(get_availabilities).to eq [range_end.next_day..]
         end
       end
 
@@ -92,7 +92,7 @@ RSpec.describe TimeFrame do
         let(:start_date) { range_start - 10 }
 
         it "returns the availabilities array with a first element starting the day after the start_date" do
-          expect(get_availabilities).to eq [start_date..range_start.yesterday, range_end.tomorrow..]
+          expect(get_availabilities).to eq [start_date..range_start.prev_day, range_end.next_day..]
         end
       end
 
@@ -100,7 +100,7 @@ RSpec.describe TimeFrame do
         let(:start_date) { range_start }
 
         it "returns the corresponding availabilities starting after the first date_range" do
-          expect(get_availabilities).to eq [range_end.tomorrow..]
+          expect(get_availabilities).to eq [range_end.next_day..]
         end
       end
     end
