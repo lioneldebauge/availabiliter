@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "active_support/core_ext/date/calculations"
+require "date"
 
 # DateRange is a Range with only dates
 # DateRange start_date is always the earliest date and end_date the latest date
@@ -22,11 +22,11 @@ class DateRange < Range
   end
 
   def tomorrow
-    end_date&.tomorrow
+    end_date&.next_day
   end
 
   def yesterday
-    start_date.yesterday
+    start_date.prev_day
   end
 
   ## adjacent == touches but doesn't overlap other DateRange

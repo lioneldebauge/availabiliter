@@ -46,7 +46,7 @@ class TimeFrame
   end
 
   def out_of_timeframe?(range_end)
-    start_date.present? && (range_end.present? && range_end < start_date)
+    !start_date.nil? && (!range_end.nil? && range_end < start_date)
   end
 
   def first_availability

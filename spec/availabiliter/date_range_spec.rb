@@ -143,7 +143,7 @@ RSpec.describe DateRange do
       let(:date_range_end) { nil }
 
       context "when other_date_range end is yesterday" do
-        let(:other_date_range_start) { other_date_range_end.yesterday }
+        let(:other_date_range_start) { other_date_range_end.prev_day }
         let(:other_date_range_end) { date_range.yesterday }
 
         it { is_expected.to be true }
@@ -161,7 +161,7 @@ RSpec.describe DateRange do
       let(:date_range_end) { date_range_start + 1 }
 
       context "when other_date_range end is yesterday" do
-        let(:other_date_range_start) { other_date_range_end.yesterday }
+        let(:other_date_range_start) { other_date_range_end.prev_day }
         let(:other_date_range_end) { date_range.yesterday }
 
         it { is_expected.to be true }
@@ -175,7 +175,7 @@ RSpec.describe DateRange do
       end
 
       context "when other_date_range start is not tomorrow and its end is not yesterday" do
-        let(:other_date_range_start) { date_range.tomorrow - 1 }
+        let(:other_date_range_start) { date_range.tomorrow.prev_day }
         let(:other_date_range_end) { nil }
 
         it { is_expected.to be false }
@@ -200,7 +200,7 @@ RSpec.describe DateRange do
     context "when the end_date is present" do
       context "when next_date_range is nil" do
         let(:next_date_range) { nil }
-        let(:expected_start) { date_range_end.tomorrow }
+        let(:expected_start) { date_range_end.next_day }
 
         it "returns a Range starting tomorrow with no end_date" do
           expect(next_availability).to eq expected_start..
@@ -218,7 +218,7 @@ RSpec.describe DateRange do
         let(:next_date_range_start) { Date.new(2020, 3, 1) }
 
         it "returns a Range starting tomorrow and ending before next_date_range start" do
-          expect(next_availability).to eq date_range_end.tomorrow..next_date_range.yesterday
+          expect(next_availability).to eq date_range_end.next_day..next_date_range.yesterday
         end
       end
     end
