@@ -2,7 +2,7 @@
 
 require "availabiliter/timeframe"
 
-RSpec.describe TimeFrame do
+RSpec.describe Availabiliter::TimeFrame do
   describe "#new" do
     subject(:new) { described_class.new(range_array) }
 
@@ -10,11 +10,11 @@ RSpec.describe TimeFrame do
     let(:earliest_range) { Date.new(2000, 1, 1)..Date.new(2000, 3, 1) }
     let(:latest_range) { Date.new(2000, 5, 1)..Date.new(2000, 7, 1) }
     let(:expected_date_ranges) { [date_range1, date_range2] }
-    let(:date_range1) { DateRange.new(earliest_range.begin, earliest_range.end) }
-    let(:date_range2) { DateRange.new(latest_range.begin, latest_range.end) }
+    let(:date_range1) { Availabiliter::DateRange.new(earliest_range.begin, earliest_range.end) }
+    let(:date_range2) { Availabiliter::DateRange.new(latest_range.begin, latest_range.end) }
 
     it "builds an array of date_ranges" do
-      expect(subject.date_ranges).to all be_an DateRange
+      expect(subject.date_ranges).to all be_an Availabiliter::DateRange
     end
 
     it "sorts the date_ranges by start_date" do
