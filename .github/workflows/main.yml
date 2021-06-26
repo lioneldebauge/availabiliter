@@ -15,7 +15,6 @@ jobs:
       run: |
         gem install bundler -v 2.2.15
         bundle install
-        bundle exec rake
     - name: Run rspec
       run: rspec spec
     - name: Run rubocop
