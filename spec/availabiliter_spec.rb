@@ -19,7 +19,7 @@ RSpec.describe Availabiliter do
       context "when the last date_range has no end date" do
         let(:range1) { Date.new(2000, 1, 1)..Date.new(2000, 2, 1) }
         let(:range2) { Date.new(2001, 1, 2).. }
-        let(:range_array) { [range1, range2] }
+        let(:range_array) { [range1] }
 
         it { expect(subject).to eq [Date.new(2000, 2, 2)..Date.new(2001, 1, 1)] }
       end
