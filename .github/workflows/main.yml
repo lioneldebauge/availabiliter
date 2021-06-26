@@ -1,4 +1,4 @@
-name: Ruby
+name: Tests
 
 on: [push,pull_request]
 
@@ -10,9 +10,13 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.0.1
-    - name: Run the default task
+        ruby-version: 2.7.2
+    - name: Set up gems
       run: |
         gem install bundler -v 2.2.15
         bundle install
         bundle exec rake
+    - name: Run rspec
+      run: rspec spec
+    - name: Run rubocop
+      run: rubocop
