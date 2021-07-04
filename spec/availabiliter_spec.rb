@@ -9,7 +9,7 @@ RSpec.describe Availabiliter do
   describe "#availabilities" do
     subject(:subject) { described_class.get_availabilities(range_array, timeframe_start) }
 
-    let(:range_array) { [range1, range2, range3] }
+    let(:range_array) { [range2, range3, range1] }
     let(:range1) { Date.new(1999, 1, 2)..Date.new(1999, 5, 1) }
     let(:range2) { Date.new(2000, 1, 1)..Date.new(2000, 2, 1) }
     let(:range3) { Date.new(2000, 3, 1)..nil }
