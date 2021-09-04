@@ -45,13 +45,8 @@ Availabiliter.get_availabilities(holidays)
 # => [Date.new(1999, 5, 2)..]
 
 ```
-## Dependencies
-
-This gem depends solely on Active Support gem. One of the future planned improvement is to remove this dependency.
-
 ## Future improvements
 
-- remove any dependency from the project
 - support Datetime
 - support beginless ranges
 
