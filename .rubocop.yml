@@ -1,5 +1,6 @@
 AllCops:
   TargetRubyVersion: 2.7.2
+  NewCops: enable
 
 Style/StringLiterals:
   Enabled: true
@@ -11,7 +12,13 @@ Style/StringLiteralsInInterpolation:
 
 Layout/LineLength:
   Max: 120
+  Exclude:
+    - 'spec/**/*'
+    - 'rakelib/*'
 
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

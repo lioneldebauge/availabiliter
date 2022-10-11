@@ -1,5 +1,15 @@
 ## Future releases
-- DateTime calculation
+- Easy integration in Rails
+- Allow to pick your own infinity format
+
+## 1.0.0
+
+- Adds support for Time and Unix timestamps
+- Allows to pick preferred format for the output: Time or Unix timestamps.
+- Allow to pick your timezone when choosing time format
+- Ruby ranges are not accepted anymore as input
+- Float::INFINITY replaces Nil class to represent time infinity
+- Major architectural internal changes to improve maintainability
 
 ## 0.2.0
 - Active Support dependency removal
