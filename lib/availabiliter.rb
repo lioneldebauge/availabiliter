@@ -41,6 +41,6 @@ class Availabiliter
   end
 
   def validate_options
-    OptionsValidator.new(options).call
+    OptionsValidator.new(**options).call
   end
 end

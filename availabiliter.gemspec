@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["lioneldebauge"]
   spec.email         = ["lionel@livecolonies.com"]
 
-  spec.summary       = "Availabiliter calculates availabilities for ruby ranges within a given time frame."
+  spec.summary       = "A pure ruby library that simplifies calculation of gaps between time slots."
   spec.homepage      = "https://github.com/lioneldebauge/availabiliter.git"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.7.2")
