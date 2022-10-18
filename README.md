@@ -14,6 +14,8 @@ Availabiter is a tested and documented Ruby libary which provides an easy way of
 For this given array of time slots...
 
 ```ruby
+require "availabiliter"
+
 shift_1 = [Time.new(2021, 1, 1, 8), Time.new(2021, 1, 1, 12)]
 shift_2 = [Time.new(2021, 1, 1, 14), Time.new(2021, 1, 1, 18)]
 working_hours = [shift_1, shift_2]
@@ -172,6 +174,13 @@ And then execute:
 Or install it yourself as:
 
     $ gem install availabiliter
+
+And require it at the top of a file to run your calculations
+
+```ruby
+# some_file.rb
+require "availabiliter
+```
 
 ## Development
 

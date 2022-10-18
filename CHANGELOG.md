@@ -2,6 +2,10 @@
 - Easy integration in Rails
 - Allow to pick your own infinity format
 
+## 1.0.1
+- Fix options validator bug
+- Modify gem description
+
 ## 1.0.0
 
 - Adds support for Time and Unix timestamps
