@@ -12,4 +12,10 @@ require "availabiliter"
 # Pry.start
 
 require "irb"
+
+# http://www.seanbehan.com/ruby-reload-method-in-non-rails-irb-sessions/
+def reload!
+  Dir["./lib/**/*.rb"].each { |f| load(f) }
+end
+
 IRB.start(__FILE__)

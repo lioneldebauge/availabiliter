@@ -13,3 +13,9 @@
 
 # byebug historic
 .byebug_history
+
+#irb history
+.irb_history
+
+# rbenv local setting
+.ruby-version
