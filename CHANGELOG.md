@@ -2,6 +2,9 @@
 - Easy integration in Rails
 - Allow to pick your own infinity format
 
+# 1.1.1
+- Fix version name typo
+
 # 1.1.0
 - Add official support for ruby 3.2.2
 
